@@ -31,6 +31,7 @@ section{margin-top:48px}
 .model .soon{aspect-ratio:1/1;display:grid;place-items:center;background:var(--soft);color:var(--mut);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
 .model span{display:block;padding:10px 12px;font-size:13.5px;color:var(--mut)}
 .model span b{color:var(--fg)}
+.model img,.full-wrap img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);padding:24px;z-index:100;text-align:center;overflow:auto}
 .lightbox:target{display:block}
 .lightbox img{max-width:94vw;max-height:82vh;margin:16px auto;display:block;background:#000}
@@ -57,8 +58,8 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 
 <section>
 <div class="model-grid">
-<div class="model"><a class="img-link" href="#katana-full"><img src="models/katana.png" alt="Katana 3D model" loading="lazy"><img class="wm" src="models/watermark.png" alt=""></a><span><b>Katana</b> 6.5k tris</span></div>
-<div class="model"><a class="img-link" href="cutesy.html"><img src="models/cutesy-bouquet.png" alt="Cutesy Collection bouquet preview" loading="lazy"><img class="wm" src="models/watermark.png" alt=""></a><span><b>Cutesy Collection</b> 8 models, most under 2.5k tris</span></div>
+<div class="model"><a class="img-link" href="#katana-full"><img src="models/katana.png" alt="Katana 3D model" loading="lazy"></a><span><b>Katana</b> 6.5k tris</span></div>
+<div class="model"><a class="img-link" href="cutesy.html"><img src="models/cutesy-bouquet.png" alt="Cutesy Collection bouquet preview" loading="lazy"></a><span><b>Cutesy Collection</b> 8 models, most under 2.5k tris</span></div>
 <div class="model"><div class="soon">soon</div><span><b>Empty</b> coming soon</span></div>
 <div class="model"><div class="soon">soon</div><span><b>Empty</b> coming soon</span></div>
 <div class="model"><div class="soon">soon</div><span><b>Empty</b> coming soon</span></div>
@@ -74,7 +75,7 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 
 <div id="katana-full" class="lightbox">
 <a class="close" href="#">X close</a>
-<div class="full-wrap"><img src="models/katana.png" alt="Katana 3D model full version"><img class="wm" src="models/watermark.png" alt=""></div>
+<div class="full-wrap"><img src="models/katana.png" alt="Katana 3D model full version"></div>
 <p><b>Katana</b> 6.5k tris &nbsp; <a href="models/katana.png" target="_blank">open full</a></p>
 </div>
 
@@ -84,6 +85,8 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 <script>
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});}
 window.addEventListener('scroll',function(){var b=document.getElementById('top');if(b)b.classList.toggle('show',window.scrollY>400);},{passive:true});
+document.querySelectorAll('.model img,.full-wrap img').forEach(function(img){img.setAttribute('draggable','false');img.addEventListener('dragstart',function(e){e.preventDefault();});img.addEventListener('contextmenu',function(e){e.preventDefault();});});
+document.addEventListener('contextmenu',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});
 </script>
 </body>
 </html>

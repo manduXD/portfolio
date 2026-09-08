@@ -38,6 +38,7 @@ video{width:100%;height:auto;display:block;background:#000}
 .model .soon{aspect-ratio:1/1;display:grid;place-items:center;background:var(--soft);color:var(--mut);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
 .model span{display:block;padding:10px 12px;font-size:13.5px;color:var(--mut)}
 .model span b{color:var(--fg)}
+.model img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
 .btn{display:inline-block;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:0;font-size:14.5px;font-weight:650;text-decoration:none;border:1px solid var(--fg)}
 .sub{color:var(--mut);max-width:620px}
 section{margin-top:56px}
@@ -80,8 +81,8 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 <h2>Modeling</h2>
 <p>Game-ready models. Clean topology, optimized for Roblox.</p>
 <div class="model-grid">
-<div class="model"><a class="img-link" href="modeling.html#katana-full"><img src="models/katana.png" alt="Katana 3D model" loading="lazy"><img class="wm" src="models/watermark.png" alt=""></a><span><b>Katana</b> 6.5k tris</span></div>
-<div class="model"><a class="img-link" href="cutesy.html"><img src="models/cutesy-bouquet.png" alt="Cutesy Collection bouquet preview" loading="lazy"><img class="wm" src="models/watermark.png" alt=""></a><span><b>Cutesy Collection</b> 8 models, most under 2.5k tris</span></div>
+<div class="model"><a class="img-link" href="modeling.html#katana-full"><img src="models/katana.png" alt="Katana 3D model" loading="lazy"></a><span><b>Katana</b> 6.5k tris</span></div>
+<div class="model"><a class="img-link" href="cutesy.html"><img src="models/cutesy-bouquet.png" alt="Cutesy Collection bouquet preview" loading="lazy"></a><span><b>Cutesy Collection</b> 8 models, most under 2.5k tris</span></div>
 </div>
 <p><a class="btn" href="modeling.html">VIEW ALL MODELS</a></p>
 </section>
@@ -118,6 +119,8 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 <script>
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});}
 window.addEventListener('scroll',function(){var b=document.getElementById('top');if(b)b.classList.toggle('show',window.scrollY>400);},{passive:true});
+document.querySelectorAll('.model img').forEach(function(img){img.setAttribute('draggable','false');img.addEventListener('dragstart',function(e){e.preventDefault();});img.addEventListener('contextmenu',function(e){e.preventDefault();});});
+document.addEventListener('contextmenu',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});
 </script>
 </body>
 </html>
