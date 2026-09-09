@@ -32,22 +32,6 @@ p{margin:10px 0}
 .card{border:1px solid var(--line);border-radius:0;padding:20px;margin:12px 0;background:var(--bg)}
 .card p{color:var(--mut);font-size:15px;margin:4px 0 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);margin-top:22px;background:var(--bg)}
-.stat{padding:14px 10px;text-align:center;border-left:1px solid var(--line)}
-.stat:first-child{border-left:0}
-.stat b{display:block;font-size:19px;letter-spacing:-.5px}
-.stat span{font-size:12.5px;color:var(--mut)}
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.pill{font-size:13.5px;border:1px solid var(--line);padding:8px 14px;text-decoration:none;color:var(--mut)}
-.pill:hover{border-color:var(--fg);color:var(--fg)}
-.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
-.work{border:1px solid var(--line);background:var(--bg);text-decoration:none;color:inherit;display:block}
-.work video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;background:#000;border-bottom:1px solid var(--line)}
-.work span{display:block;padding:10px 12px;font-size:13.5px;color:var(--mut)}
-.work span b{color:var(--fg);display:block;font-size:14.5px;margin-bottom:2px}
-.samples{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.sample{font-size:13px;border:1px solid var(--line);padding:6px 12px;text-decoration:none;color:var(--mut)}
-.sample:hover{border-color:var(--fg);color:var(--fg)}
 .model-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
 .model{border:1px solid var(--line);background:var(--bg);display:block}
 .model a.img-link{display:block;border-bottom:1px solid var(--line);background:#000}
@@ -77,7 +61,7 @@ footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:v
 #top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
 #top.show{transform:translateX(-50%) translateY(0);opacity:1}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--soft);border:1px solid var(--line);padding:2px 8px;border-radius:0;font-size:13px;white-space:nowrap}
-@media(max-width:640px){h1{font-size:29px}.grid2{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.work-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}.stat b{font-size:16px}}
+@media(max-width:640px){h1{font-size:29px}.grid2{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -100,22 +84,6 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 <a class="btn2" href="proofs.html">See proofs</a>
 </div>
 
-<div class="stats">
-<div class="stat"><b>$23k+</b><span>earned, receipts linked</span></div>
-<div class="stat"><b>150+</b><span>paid orders</span></div>
-<div class="stat"><b>8</b><span>systems on video below</span></div>
-</div>
-
-<div class="pills">
-<a class="pill" href="#samples">Samples</a>
-<a class="pill" href="#work">Services</a>
-<a class="pill" href="#modeling">Modeling</a>
-<a class="pill" href="#pricing">Pricing</a>
-<a class="pill" href="#process">Process</a>
-<a class="pill" href="#faq">FAQ</a>
-<a class="pill" href="#contact">Contact</a>
-</div>
-
 <section>
 <h2>Why me (besides my charming personality)</h2>
 <div class="grid2">
@@ -126,35 +94,16 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 </div>
 </section>
 
-<section id="samples">
-<h2>Selected work, watch it move</h2>
-<p>Every service below has 2 video samples. Click any clip for the full video and details.</p>
-<div class="work-grid">
-<a class="work" href="videos/parry.html"><video src="videos/parry.mp4" preload="metadata" muted playsinline></video><span><b>Parry combat</b>Dash, parry, criticals, posture.</span></a>
-<a class="work" href="videos/parkour.html"><video src="videos/0904.mp4" preload="metadata" muted playsinline></video><span><b>Movement / parkour</b>Wall run, slide, vault, R6.</span></a>
-<a class="work" href="videos/anticheat.html"><video src="videos/anticheat.mp4" preload="metadata" muted playsinline></video><span><b>Anticheat</b>Aim, movement, NoClip, tampering.</span></a>
-<a class="work" href="videos/mobai.html"><video src="videos/mobai.mp4" preload="metadata" muted playsinline></video><span><b>Mob AI + combat</b>Block, dash, punch, AI.</span></a>
-<a class="work" href="videos/leaf.html"><video src="videos/leaf.mp4" preload="metadata" muted playsinline></video><span><b>Simulator systems</b>Upgrades, tasks, inventory.</span></a>
-<a class="work" href="videos/rng.html"><video src="videos/rng.mp4" preload="metadata" muted playsinline></video><span><b>RNG systems</b>Rolls, spins, teleports.</span></a>
-<a class="work" href="videos/moderation.html"><video src="videos/moderation.mp4" preload="metadata" muted playsinline></video><span><b>Discord to Roblox</b>Bans, logs, roles, data.</span></a>
-<a class="work" href="videos/various.html"><video src="videos/various.mp4" preload="metadata" muted playsinline></video><span><b>Profiles, clans, spins</b>Everyday backend pieces.</span></a>
-</div>
-<div class="btn-row">
-<a class="btn2" href="clips.html">View all clips</a>
-<a class="btn2" href="experience.html">More on experience page</a>
-</div>
-</section>
-
 <section id="work">
-<h2>What I do, with samples</h2>
-<p>Roblox commissions only. Pick one thing or dump the whole game on me. Each card links 2 matching clips above.</p>
-<div class="card"><h3>Combat and movement</h3><p>Swords, guns, combos, blocking, dashing, sliding, wall running. Hitboxes that feel fair instead of rigged.</p><div class="samples"><a class="sample" href="videos/parry.html">Parry clip</a><a class="sample" href="videos/parkour.html">Parkour clip</a></div></div>
-<div class="card"><h3>Anticheats</h3><p>Top tier stuff and genuinely my favorite thing to build. Speed, fly, teleport, noclip checks. Remotes validated and rate limited. The client gets zero trust. Zero.</p><div class="samples"><a class="sample" href="videos/anticheat.html">Anticheat clip</a><a class="sample" href="videos/moderation.html">Enforcement clip</a></div></div>
-<div class="card"><h3>Data that does not wipe</h3><p>Saves with session locking and retries. Cross server stuff, matchmaking, rounds, teleports, global boards.</p><div class="samples"><a class="sample" href="videos/various.html">Profiles clip</a><a class="sample" href="videos/rng.html">Inventory clip</a></div></div>
-<div class="card"><h3>Mobs, quests, progression</h3><p>Minions, workers, waves, NPCs, dialogue, quests, cutscenes, levels, rebirths, skill trees, plus grows offline systems that earn stuff while players are away. The stuff that keeps players logged in. High school and other roleplay systems on request.</p><div class="samples"><a class="sample" href="videos/mobai.html">Mob AI clip</a><a class="sample" href="videos/leaf.html">Tasks clip</a></div></div>
-<div class="card"><h3>Shops and money</h3><p>Inventory, shops, trading, crafting, loot, chests, upgrades, rewards, gamepasses, playtime and referral/invite rewards.</p><div class="samples"><a class="sample" href="videos/rng.html">RNG clip</a><a class="sample" href="videos/leaf.html">Upgrades clip</a></div></div>
-<div class="card"><h3>Discord hooked to Roblox</h3><p>Verify members, log buys and bans, roblox moderation via discord and staff rate limits (to prevent mass banning, of course), roblox profile to discord profile roles. Python or Node, your pick.</p><div class="samples"><a class="sample" href="videos/moderation.html">Moderation clip</a><a class="sample" href="videos/various.html">Systems clip</a></div></div>
-<div class="card" id="modeling"><h3>Modeling</h3><p>Game-ready weapons and props. Clean topology, optimized tris. Most under 2.5k tris.</p><div class="model-grid"><div class="model"><a class="img-link" href="modeling.html#katana-full"><img src="models/katana.png" alt="Katana 3D model" loading="lazy"></a><span><b>Katana</b> 6.5k tris</span></div><div class="model"><a class="img-link" href="cutesy.html"><img src="models/cutesy-bouquet.png" alt="Cutesy Collection preview" loading="lazy"></a><span><b>Cutesy Collection</b> 8 models</span></div></div><div class="samples"><a class="sample" href="modeling.html">Modeling page</a><a class="sample" href="cutesy.html">Cutesy page</a></div></div>
+<h2>What I do</h2>
+<p>Roblox commissions only. Pick one thing or dump the whole game on me.</p>
+<div class="card"><h3>Combat and movement</h3><p>Swords, guns, combos, blocking, dashing, sliding, wall running. Hitboxes that feel fair instead of rigged.</p></div>
+<div class="card"><h3>Anticheats</h3><p>Top tier stuff and genuinely my favorite thing to build. Speed, fly, teleport, noclip checks. Remotes validated and rate limited. The client gets zero trust. Zero.</p></div>
+<div class="card"><h3>Data that does not wipe</h3><p>Saves with session locking and retries. Cross server stuff, matchmaking, rounds, teleports, global boards.</p></div>
+<div class="card"><h3>Mobs, quests, progression</h3><p>Minions, workers, waves, NPCs, dialogue, quests, cutscenes, levels, rebirths, skill trees, plus grows offline systems that earn stuff while players are away. The stuff that keeps players logged in. High school and other roleplay systems on request.</p></div>
+<div class="card"><h3>Shops and money</h3><p>Inventory, shops, trading, crafting, loot, chests, upgrades, rewards, gamepasses, playtime and referral/invite rewards.</p></div>
+<div class="card"><h3>Discord hooked to Roblox</h3><p>Verify members, log buys and bans, roblox moderation via discord and staff rate limits (to prevent mass banning, of course), roblox profile to discord profile roles. Python or Node, your pick.</p></div>
+<div class="card"><h3>Modeling</h3><p>Game-ready weapons and props. Clean topology, optimized tris. See examples on the <a href="modeling.html">modeling page</a>.</p></div>
 <div class="note"><strong>Built so you can tweak it.</strong> All code is built for customizability as well, containing an easy to read config and well commented Luau. Change damage, cooldowns, prices, chances and mob spawns yourself without digging through core logic.</div>
 </section>
 
@@ -173,7 +122,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 <p>Store checkout accepts cards, PayPal, crypto, CashApp and more. Full list: <a href="https://www.tebex.io/payment-methods" target="_blank">tebex.io/payment-methods</a>. Direct commissions: PayPal or Robux at the rates above. You can also purchase through my <a href="https://ko-fi.com/monsterchugger67" target="_blank">Ko-Fi</a>. See which <a href="https://help.ko-fi.com/hc/en-us/articles/24482435253661-What-payment-methods-are-available-on-Ko-fi" target="_blank">payment methods are available on Ko-Fi</a>.</p>
 </section>
 
-<section id="process">
+<section>
 <h2>How this goes</h2>
 <ul class="clean">
 <li>You DM me what you want, with details. Game link helps a ton.</li>
@@ -184,7 +133,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 <div class="note"><strong>Hot tip: the more specific you are, the faster I quote.</strong><br>Good: Fast paced sword system with m1 combo, block and dash with i-frames, mobile support, 3 weeks. That gets a same day answer.<br>Bad: yo make me a game like blox fruits. That gets a sigh.</div>
 </section>
 
-<section id="faq">
+<section>
 <h2>Quick answers</h2>
 <details open><summary>Will you vanish mid project?</summary><p>Nope. I reply within a day, usually way faster. Clips, updates, straight answers. I like money, so I stick around.</p></details>
 <details><summary>Models?</summary><p>Scripting is all hand coded for your game. I also do modeling now, weapons, props and game-ready assets. You can provide your own models, or I can model them for you.</p></details>
