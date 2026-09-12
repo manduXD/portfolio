@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/.well-known/discord",
+      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+    }
+  ]
 }
