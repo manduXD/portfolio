@@ -61,7 +61,24 @@ footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:v
 #top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
 #top.show{transform:translateX(-50%) translateY(0);opacity:1}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--soft);border:1px solid var(--line);padding:2px 8px;border-radius:0;font-size:13px;white-space:nowrap}
-@media(max-width:640px){h1{font-size:29px}.grid2{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.price-card{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:0;padding:24px 22px;display:flex;flex-direction:column}
+.price-top{font-size:15px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--fg)}
+.rec{font-size:11px;font-weight:700;background:var(--fg);color:var(--bg);padding:4px 10px;border-radius:0;letter-spacing:.5px;white-space:nowrap}
+.price-card h3{font-size:24px;line-height:1.15;letter-spacing:-.5px;margin:0 0 8px;color:var(--fg)}
+.price-desc{color:var(--mut);font-size:14.5px;margin:0 0 16px;min-height:66px}
+.price-val{font-size:32px;font-weight:750;letter-spacing:-.5px;margin:6px 0 18px;color:var(--fg);line-height:1}
+.price-val sup{font-size:14px;font-weight:400;color:var(--mut);margin-right:2px}
+.price-val small{font-size:14px;font-weight:400;color:var(--mut)}
+.price-btn{display:block;text-align:center;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:0;font-weight:650;font-size:14.5px;text-decoration:none;margin-bottom:18px;border:1px solid var(--fg)}
+.price-btn:hover{opacity:.9}
+.price-card.featured{border-color:var(--fg);background:var(--soft)}
+.price-card.featured .price-btn{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.price-list{list-style:none;margin:0;border-top:1px solid var(--line);padding-top:14px}
+.price-list li{font-size:13.5px;color:var(--mut);padding:7px 0 7px 24px;position:relative;border:0}
+.price-list li::before{content:"✓";position:absolute;left:2px;color:var(--mut)}
+.price-list li b{color:var(--fg);font-weight:650}
+@media(max-width:640px){h1{font-size:29px}.grid2{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.price-desc{min-height:0}}
 </style>
 </head>
 <body>
@@ -69,7 +86,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 
 <header>
 <a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture">monsterchugger67 <span>/ roblox scripter</span></a>
-<nav><a href="index.html" class="active">Home</a><a href="index.html#work">Work</a><a href="modeling.html">Modeling</a><a href="index.html#pricing">Pricing</a><a href="proofs.html">Proofs</a><a href="experience.html">Experience</a><a href="index.html#contact">Contact</a><a href="https://ko-fi.com/monsterchugger67" target="_blank">Purchase</a></nav>
+<nav><a href="index.html" class="active">Home</a><a href="index.html#work">Work</a><a href="modeling.html">Modeling</a><a href="index.html#pricing">Pricing</a><a href="proofs.html">Proofs</a><a href="experience.html">Experience &amp; Past Work</a><a href="index.html#contact">Contact</a><a href="https://ko-fi.com/monsterchugger67" target="_blank">Purchase</a></nav>
 </header>
 
 <div class="badge">Commission status: open</div>
@@ -80,7 +97,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 <div class="btn-row">
 <a class="btn" href="#contact">Hire me</a>
 <a class="btn2" href="#" onclick="copyDiscord();return false;">Copy Discord</a>
-<a class="btn2" href="experience.html">Experience</a>
+<a class="btn2" href="experience.html">Experience &amp; Past Work</a>
 <a class="btn2" href="proofs.html">See proofs</a>
 </div>
 
@@ -96,7 +113,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 
 <section id="work">
 <h2>What I do</h2>
-<p>Roblox commissions only. Pick one thing or dump the whole game on me.</p>
+<p>Roblox commissions only. Pick one thing or dump the whole game on me. <u>I can do anything.</u></p>
 <div class="card"><h3>Combat and movement</h3><p>Swords, guns, combos, blocking, dashing, sliding, wall running. Hitboxes that feel fair instead of rigged.</p></div>
 <div class="card"><h3>Anticheats</h3><p>Top tier stuff and genuinely my favorite thing to build. Speed, fly, teleport, noclip checks. Remotes validated and rate limited. The client gets zero trust. Zero.</p></div>
 <div class="card"><h3>Data that does not wipe</h3><p>Saves with session locking and retries. Cross server stuff, matchmaking, rounds, teleports, global boards.</p></div>
@@ -110,16 +127,68 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 <section id="pricing">
 <h2>Pricing, simple</h2>
 <p>Price depends on how much work it is. Send details, I quote fast. Vague messages get vague quotes. Obviously.</p>
-<table>
-<tr><th>Scope</th><th>Price</th></tr>
-<tr><td>Minimum</td><td>10 dollars or 2,500 Robux</td></tr>
-<tr><td>Typical work range</td><td>10 to 250 dollars or 2,500 to 80,000 Robux</td></tr>
-<tr><td>Extended work / hiring</td><td>Message me for a quote</td></tr>
-</table>
+<div class="price-grid">
+<div class="price-card">
+<div class="price-top">Basic</div>
+<h3>Quick fixes</h3>
+<p class="price-desc">Small jobs, fast turnaround. Perfect if something is broken or you just need a clean little system.</p>
+<div class="price-val"><sup>$</sup>10-50 <small>/ fixed</small></div>
+<a class="price-btn" href="#contact">Choose Basic</a>
+<ul class="price-list">
+<li><b>Bug fixes, optimization</b> & lag cleanup</li>
+<li><b>Basic scripts</b> or minor systems</li>
+<li>Small UI tweaks, configs & setup help</li>
+<li>1-3 day delivery + test place check</li>
+<li>3-day bug-fix warranty included</li>
+</ul>
+</div>
+<div class="price-card featured">
+<div class="price-top">Standard <span class="rec">RECOMMENDED</span></div>
+<h3>Full systems</h3>
+<p class="price-desc">The meat. Complete combat, anticheat, data, AI, shops — built clean and ready to tweak.</p>
+<div class="price-val"><sup>$</sup>50-400 <small>/ fixed</small></div>
+<a class="price-btn" href="#contact">Choose Standard</a>
+<ul class="price-list">
+<li><b>Complex systems:</b> combat, movement, anticheat, data, AI</li>
+<li><b>Mobile & console support</b> included</li>
+<li>Readable config + comments so you can tweak it yourself</li>
+<li>Clips along the way + setup guide after</li>
+<li>3-day warranty + 1 tweak round</li>
+</ul>
+</div>
+<div class="price-card">
+<div class="price-top">Long-term / Hiring</div>
+<h3>Your scripter on call</h3>
+<p class="price-desc">Got a roadmap? Keep me in your team chat and watch stuff actually ship.</p>
+<div class="price-val"><sup>$</sup>650-1,300 <small>/ month</small></div>
+<a class="price-btn" href="#contact">DM for quote</a>
+<ul class="price-list">
+<li><b>Discounted pricing</b> on bulk orders</li>
+<li><b>$650-1,300/month</b> retainer, DM for quote</li>
+<li>Priority queue + daily / weekly updates</li>
+<li>Roadmap planning, docs & team collab</li>
+<li>Pause or cancel monthly, no weird lock-in</li>
+</ul>
+</div>
+<div class="price-card">
+<div class="price-top">Full Game</div>
+<h3>Project managed</h3>
+<p class="price-desc">Dump the whole game on me. I build, organize, and ship it with you.</p>
+<div class="price-val">Custom <small>/ DM</small></div>
+<a class="price-btn" href="#contact">DM for quote</a>
+<ul class="price-list">
+<li><b>Full game build,</b> systems wired together</li>
+<li><b>Project management:</b> milestones, clips, QA</li>
+<li>Can hire / manage other devs if needed</li>
+<li>Launch support + post-launch fixes</li>
+<li>Send game link for custom quote</li>
+</ul>
+</div>
+</div>
 <div class="note"><strong>Half upfront, half after completion.</strong> Higher upfront payment or full upfront payment gets higher priority in my queue. Clips before final pay, full source plus setup guide after. 3 day bug fix warranty.</div>
 <p><strong>Teams and bulk.</strong> Want me on your team or got a big list? You save with bulk. Send the roadmap.</p>
 <p><strong>Revenue share.</strong> Only for live games doing 100 plus average players with solid history. Else fixed price, sorry.</p>
-<p>Store checkout accepts cards, PayPal, crypto, CashApp and more. Full list: <a href="https://www.tebex.io/payment-methods" target="_blank">tebex.io/payment-methods</a>. Direct commissions: PayPal or Robux at the rates above. You can also purchase through my <a href="https://ko-fi.com/monsterchugger67" target="_blank">Ko-Fi</a>. See which <a href="https://help.ko-fi.com/hc/en-us/articles/24482435253661-What-payment-methods-are-available-on-Ko-fi" target="_blank">payment methods are available on Ko-Fi</a>.</p>
+<p>Store checkout accepts cards, PayPal, crypto, CashApp and more. Full list: <a href="https://www.tebex.io/payment-methods" target="_blank">tebex.io/payment-methods</a>. Direct commissions: PayPal or Robux (2,500+ Robux min). You can also purchase through my <a href="https://ko-fi.com/monsterchugger67" target="_blank">Ko-Fi</a>. See which <a href="https://help.ko-fi.com/hc/en-us/articles/24482435253661-What-payment-methods-are-available-on-Ko-fi" target="_blank">payment methods are available on Ko-Fi</a>.</p>
 </section>
 
 <section>
