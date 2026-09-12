@@ -25,9 +25,11 @@ nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
 nav a{text-decoration:none;color:var(--mut);font-size:15px;padding:8px 12px;border:1px solid transparent}
 nav a:hover{color:var(--fg);background:var(--soft);border-color:var(--line)}
 nav a.active{color:var(--fg);background:var(--soft);border-color:var(--line)}
-.hero-row{display:grid;grid-template-columns:44px 1fr 44px;gap:12px;margin-top:32px;align-items:stretch}
+.hero-row{position:relative;margin-top:32px}
 .hero{border:1px solid var(--line);background:var(--soft);padding:56px 32px;margin-top:0;text-align:center;display:flex;flex-direction:column;align-items:center}
-.stat{border:1px solid var(--line);background:var(--soft);display:flex;align-items:center;justify-content:center;text-decoration:none;padding:12px 0;min-width:0}
+.stat{position:absolute;top:0;bottom:0;width:44px;border:1px solid var(--line);background:var(--soft);display:flex;align-items:center;justify-content:center;text-decoration:none}
+.stat.left{right:100%;margin-right:32px}
+.stat.right{left:100%;margin-left:32px}
 a.stat:hover{border-color:var(--fg)}
 .stat span{writing-mode:vertical-rl;font-size:12px;letter-spacing:2px;color:var(--mut);font-weight:700;white-space:nowrap}
 .stat.left span{transform:rotate(180deg)}
@@ -108,7 +110,8 @@ footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:v
 #toast.show{opacity:1}
 #top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
 #top.show{transform:translateX(-50%) translateY(0);opacity:1}
-@media(max-width:1000px){.clip-grid,.model-grid{grid-template-columns:1fr 1fr}.price-grid{grid-template-columns:1fr 1fr}.price-desc{min-height:0}.contact-grid{grid-template-columns:1fr}.hero-row{grid-template-columns:1fr 1fr}.hero-row .hero{grid-column:1/-1;order:-1}.stat{padding:20px 16px}.stat span{writing-mode:horizontal-tb;white-space:normal;text-align:center;letter-spacing:1px}}
+@media(max-width:1000px){.clip-grid,.model-grid{grid-template-columns:1fr 1fr}.price-grid{grid-template-columns:1fr 1fr}.price-desc{min-height:0}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:1300px){.stat{display:none}}
 @media(max-width:640px){.hero{padding:40px 20px}.grid2{grid-template-columns:1fr}.clip-grid,.model-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.price-desc{min-height:0}}
 </style>
 </head>
