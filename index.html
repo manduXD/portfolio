@@ -14,54 +14,52 @@ body{background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,BlinkMacSy
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 a{color:inherit;text-underline-offset:3px}
 .wrap{max-width:1075px;margin:0 auto;padding:0 24px 100px}
-header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);margin-bottom:48px;gap:12px;flex-wrap:wrap}
-header .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:22px;color:var(--fg);text-decoration:none}
-header .brand span{color:var(--mut);font-weight:400}
-.avatar{width:48px;height:48px;object-fit:cover;display:block;border:0}
-nav{display:flex;gap:20px;font-size:20px;color:var(--mut);flex-wrap:wrap}
-nav a{text-decoration:none} nav a:hover{color:var(--fg);text-decoration:underline}
-nav a.active{color:var(--fg);text-decoration:underline}
-.badge{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--mut);border:1px solid var(--line);background:var(--soft);border-radius:0;padding:6px 14px;margin-bottom:20px}
-h1{font-size:38px;line-height:1.1;letter-spacing:-1px;font-weight:750;margin:0 0 12px}
-.lead{font-size:17px;color:var(--mut);max-width:620px}
-.lead strong{color:var(--fg)}
-section{margin-top:64px}
-h2{font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.site-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header .inner{max-width:1075px;margin:0 auto;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.brand .id{line-height:1.25}
+.brand .id b{display:block;font-size:16px}
+.brand .id span{font-size:12px;color:var(--mut);font-weight:400}
+.avatar{width:40px;height:40px;object-fit:cover;display:block;border:1px solid var(--line)}
+nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;color:var(--mut);font-size:15px;padding:8px 12px;border:1px solid transparent}
+nav a:hover{color:var(--fg);background:var(--soft);border-color:var(--line)}
+nav a.active{color:var(--fg);background:var(--soft);border-color:var(--line)}
+.hero{border:1px solid var(--line);background:var(--soft);padding:56px 32px;margin-top:32px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.eyebrow{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--mut);border:1px solid var(--line);background:var(--bg);padding:6px 14px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-1.5px;font-weight:800;margin:0 0 14px;max-width:820px}
+.hero h1 u{text-underline-offset:4px}
+.hero .lead{font-size:17px;color:var(--mut);max-width:640px}
+.hero .lead strong{color:var(--fg)}
+section{margin-top:56px}
+h2{font-size:24px;font-weight:750;letter-spacing:-.5px;margin-bottom:6px}
+.sec-sub{color:var(--mut);margin:0 0 14px;max-width:680px}
 h3{font-size:16px;margin-bottom:4px}
 p{margin:10px 0}
-.card{border:1px solid var(--line);border-radius:0;padding:20px;margin:12px 0;background:var(--bg)}
+.card{border:1px solid var(--line);background:var(--soft);padding:20px;margin:12px 0}
 .card p{color:var(--mut);font-size:15px;margin:4px 0 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
-.model{border:1px solid var(--line);background:var(--bg);display:block}
+.clip-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+.clip{border:1px solid var(--line);background:var(--soft);text-decoration:none;color:inherit;display:block}
+.clip:hover{border-color:var(--fg)}
+.clip video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;background:#000;border-bottom:1px solid var(--line)}
+.clip .soon{aspect-ratio:16/9;display:grid;place-items:center;background:var(--soft);color:var(--mut);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
+.clip span{display:block;padding:10px 12px;font-size:13.5px;color:var(--mut)}
+.clip span b{color:var(--fg)}
+.model-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+.model{border:1px solid var(--line);background:var(--soft);display:block}
+.model:hover{border-color:var(--fg)}
 .model a.img-link{display:block;border-bottom:1px solid var(--line);background:#000}
 .model img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block;background:#000}
 .model .soon{aspect-ratio:1/1;display:grid;place-items:center;background:var(--soft);color:var(--mut);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
 .model span{display:block;padding:10px 12px;font-size:13.5px;color:var(--mut)}
 .model span b{color:var(--fg)}
-table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0}
-th,td{text-align:left;padding:12px 14px;border:1px solid var(--line);vertical-align:top}
-th{background:var(--soft);color:var(--mut);font-weight:500;font-size:13px}
-ul.clean{list-style:none;margin:10px 0}
-ul.clean li{padding:8px 0 8px 24px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
-ul.clean li:last-child{border-bottom:0}
-ul.clean li::before{content:">";position:absolute;left:0;color:var(--mut)}
-.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-block;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:0;font-size:14.5px;font-weight:650;text-decoration:none;border:1px solid var(--fg)}
-.btn2{display:inline-block;background:transparent;color:var(--fg);padding:12px 22px;border-radius:0;font-size:14.5px;text-decoration:none;border:1px solid var(--line)}
-.btn2:hover{border-color:var(--fg)}
-.note{background:var(--soft);border:1px solid var(--line);border-radius:0;padding:16px 18px;font-size:14.5px;color:var(--mut);margin:14px 0}
-.note strong{color:var(--fg)}
-details{border:1px solid var(--line);border-radius:0;padding:12px 16px;margin:8px 0}
-summary{cursor:pointer;font-weight:600;font-size:15px}
-details p{color:var(--mut);font-size:14.5px}
-footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);font-size:14px;padding:10px 18px;border-radius:0;opacity:0;transition:.2s;pointer-events:none}
-#toast.show{opacity:1}
-#top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
-#top.show{transform:translateX(-50%) translateY(0);opacity:1}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--soft);border:1px solid var(--line);padding:2px 8px;border-radius:0;font-size:13px;white-space:nowrap}
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tag{font-size:12.5px;border:1px solid var(--line);background:var(--soft);padding:4px 10px;color:var(--mut)}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--soft);border:1px solid var(--line);padding:10px 14px;font-size:14.5px;margin:8px 0}
+.kv b{font-weight:600}
+.kv span{color:var(--mut);font-size:13px;white-space:nowrap}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
 .price-card{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:0;padding:20px 18px;display:flex;flex-direction:column;min-width:0}
 .price-top{font-size:13.5px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--fg)}
 .rec{font-size:10px;font-weight:700;background:var(--fg);color:var(--bg);padding:4px 8px;border-radius:0;letter-spacing:.5px;white-space:nowrap}
@@ -79,43 +77,61 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 .price-list li{font-size:13px;color:var(--mut);padding:7px 0 7px 24px;position:relative;border:0}
 .price-list li::before{content:"✓";position:absolute;left:2px;color:var(--mut)}
 .price-list li b{color:var(--fg);font-weight:650}
-@media(max-width:900px){.price-grid{grid-template-columns:1fr 1fr}.price-desc{min-height:0}}
-@media(max-width:640px){h1{font-size:29px}.grid2{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.price-desc{min-height:0}}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.handle{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);background:var(--bg);padding:10px 14px;margin:8px 0;font-size:14.5px;text-decoration:none}
+a.handle:hover{border-color:var(--fg)}
+.handle small{color:var(--mut)}
+.handle .copy{background:transparent;border:1px solid var(--line);color:var(--mut);font-size:13px;padding:6px 12px;cursor:pointer;font-family:inherit}
+.handle .copy:hover{color:var(--fg);border-color:var(--fg)}
+ul.clean{list-style:none;margin:10px 0}
+ul.clean li{padding:8px 0 8px 24px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li::before{content:">";position:absolute;left:0;color:var(--mut)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero .btn-row{justify-content:center}
+.btn{display:inline-block;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:0;font-size:14.5px;font-weight:650;text-decoration:none;border:1px solid var(--fg)}
+.btn2{display:inline-block;background:transparent;color:var(--fg);padding:12px 22px;border-radius:0;font-size:14.5px;text-decoration:none;border:1px solid var(--line)}
+.btn2:hover{border-color:var(--fg)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:0;padding:16px 18px;font-size:14.5px;color:var(--mut);margin:14px 0}
+.note strong{color:var(--fg)}
+details{border:1px solid var(--line);border-radius:0;padding:12px 16px;margin:8px 0;background:var(--soft)}
+summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{color:var(--mut);font-size:14.5px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--soft);border:1px solid var(--line);padding:2px 8px;border-radius:0;font-size:13px;white-space:nowrap}
+footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);font-size:14px;padding:10px 18px;border-radius:0;opacity:0;transition:.2s;pointer-events:none}
+#toast.show{opacity:1}
+#top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
+#top.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media(max-width:1000px){.clip-grid,.model-grid{grid-template-columns:1fr 1fr}.price-grid{grid-template-columns:1fr 1fr}.price-desc{min-height:0}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.hero{padding:40px 20px}.grid2{grid-template-columns:1fr}.clip-grid,.model-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.price-desc{min-height:0}}
 </style>
 </head>
 <body>
+<header class="site-header">
+<div class="inner">
+<a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture"><span class="id"><b>monsterchugger67</b><span>Roblox scripter</span></span></a>
+<nav><a href="index.html" class="active">Home</a><a href="index.html#work">Work</a><a href="modeling.html">Modeling</a><a href="index.html#pricing">Pricing</a><a href="proofs.html">Proofs</a><a href="experience.html">Experience &amp; Past Work</a><a href="index.html#contact">Contact</a><a href="https://ko-fi.com/monsterchugger67" target="_blank">Purchase</a></nav>
+</div>
+</header>
 <div class="wrap">
 
-<header>
-<a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture">monsterchugger67 <span>/ roblox scripter</span></a>
-<nav><a href="index.html" class="active">Home</a><a href="index.html#work">Work</a><a href="modeling.html">Modeling</a><a href="index.html#pricing">Pricing</a><a href="proofs.html">Proofs</a><a href="experience.html">Experience &amp; Past Work</a><a href="index.html#contact">Contact</a><a href="https://ko-fi.com/monsterchugger67" target="_blank">Purchase</a></nav>
-</header>
-
-<div class="badge">Commission status: open</div>
+<section class="hero" id="home">
+<span class="eyebrow">Commission status: open</span>
 <h1>I make <u>top tier</u>, scalable, hyper-optimized systems and scripts.</h1>
 <p class="lead">Hey, I'm <strong>monsterchugger67</strong>. Combat, movement, anticheats, data, mob AI / actual AI, the whole backend mess you never want to touch. You tell me what you want, I build it clean and you get it right on time. No vanishing act, promise.</p>
 <p class="lead">Made <a href="proofs.html">over $23,000 ($8,498 this year alone)</a> doing this. <a href="proofs.html">Receipts here.</a></p>
-
 <div class="btn-row">
 <a class="btn" href="#contact">Hire me</a>
 <a class="btn2" href="#" onclick="copyDiscord();return false;">Copy Discord</a>
 <a class="btn" href="experience.html">Experience &amp; Past Work</a>
 <a class="btn2" href="proofs.html">See proofs</a>
 </div>
-
-<section>
-<h2>Why me (besides my charming personality)</h2>
-<div class="grid2">
-<div class="card"><h3>Fast code</h3><p>Low lag, no memory leaks, runs fine on your cousin's potato phone too.</p></div>
-<div class="card"><h3>Clean code</h3><p>Config file you can actually read. Well commented Luau. Tweak numbers yourself like a big shot, no headache.</p></div>
-<div class="card"><h3>On time</h3><p>We agree a date. You get clips along the way. It lands when I say it lands.</p></div>
-<div class="card"><h3>Easy to reach</h3><p>Ask me anything. If your idea will explode later, I will tell you straight instead of smiling and billing you.</p></div>
-</div>
 </section>
 
 <section id="work">
 <h2>What I do</h2>
-<p>Roblox commissions only. Pick one thing or dump the whole game on me. <u>I can do anything.</u></p>
+<p class="sec-sub">Roblox commissions only. Pick one thing or dump the whole game on me. <u>I can do anything.</u></p>
 <div class="card"><h3>Combat and movement</h3><p>Swords, guns, combos, blocking, dashing, sliding, wall running. Hitboxes that feel fair instead of rigged.</p></div>
 <div class="card"><h3>Anticheats</h3><p>Top tier stuff and genuinely my favorite thing to build. Speed, fly, teleport, noclip checks. Remotes validated and rate limited. The client gets zero trust. Zero.</p></div>
 <div class="card"><h3>Data that does not wipe</h3><p>Saves with session locking and retries. Cross server stuff, matchmaking, rounds, teleports, global boards.</p></div>
@@ -126,9 +142,23 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 <div class="note"><strong>Built so you can tweak it.</strong> All code is built for customizability as well, containing an easy to read config and well commented Luau. Change damage, cooldowns, prices, chances and mob spawns yourself without digging through core logic.</div>
 </section>
 
+<section>
+<h2>Past work</h2>
+<p class="sec-sub">Footage of systems I have built. Full list with details on the <a href="clips.html">clips page</a>.</p>
+<div class="clip-grid">
+<a class="clip" href="videos/parry.html"><video src="videos/parry.mp4" preload="metadata" muted playsinline></video><span><b>Parry combat system</b> Dashing, parrying, criticals, weapons and posture.</span></a>
+<a class="clip" href="videos/parkour.html"><video src="videos/0904.mp4" preload="metadata" muted playsinline></video><span><b>R6 Movement / Parkour System</b> R6 wall running, sliding, vaulting and more.</span></a>
+<a class="clip" href="videos/anticheat.html"><video src="videos/anticheat.mp4" preload="metadata" muted playsinline></video><span><b>Advanced Anticheat</b> Aim, movement, NoClip, client tampering and more.</span></a>
+<a class="clip" href="videos/leaf.html"><video src="videos/leaf.mp4" preload="metadata" muted playsinline></video><span><b>Leaf picking simulator system</b> Upgrades, picking, tasks, inventory and more.</span></a>
+<a class="clip" href="videos/moderation.html"><video src="videos/moderation.mp4" preload="metadata" muted playsinline></video><span><b>Discord to Roblox moderation</b> Bans, logs, roles and data actions from Discord.</span></a>
+<a class="clip" href="videos/mobai.html"><video src="videos/mobai.mp4" preload="metadata" muted playsinline></video><span><b>Mob AI and battlegrounds combat</b> Blocking, dashing, punching and lightweight AI.</span></a>
+</div>
+<p><a class="btn" href="clips.html">VIEW ALL CLIPS</a></p>
+</section>
+
 <section id="pricing">
 <h2>Pricing, simple</h2>
-<p>Price depends on how much work it is. Send details, I quote fast. Vague messages get vague quotes. Obviously.</p>
+<p class="sec-sub">Price depends on how much work it is. Send details, I quote fast. Vague messages get vague quotes. Obviously.</p>
 <div class="price-grid">
 <div class="price-card">
 <div class="price-top">Basic</div>
@@ -195,6 +225,16 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 </section>
 
 <section>
+<h2>Why me (besides my charming personality)</h2>
+<div class="grid2">
+<div class="card"><h3>Fast code</h3><p>Low lag, no memory leaks, runs fine on your cousin's potato phone too.</p></div>
+<div class="card"><h3>Clean code</h3><p>Config file you can actually read. Well commented Luau. Tweak numbers yourself like a big shot, no headache.</p></div>
+<div class="card"><h3>On time</h3><p>We agree a date. You get clips along the way. It lands when I say it lands.</p></div>
+<div class="card"><h3>Easy to reach</h3><p>Ask me anything. If your idea will explode later, I will tell you straight instead of smiling and billing you.</p></div>
+</div>
+</section>
+
+<section>
 <h2>How this goes</h2>
 <ul class="clean">
 <li>You DM me what you want, with details. Game link helps a ton.</li>
@@ -215,10 +255,22 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background
 
 <section id="contact">
 <h2>Hit me up</h2>
-<p>I live in Canada and am online a lot. <code>My 12:00 AM is <span class="their-time">loading</span> for you.</code> Fastest way to contact me is Discord. Send game type plus your vision. The more detail the faster I say yes.</p>
+<p class="sec-sub">I live in Canada and am online a lot. <code>My 12:00 AM is <span class="their-time">loading</span> for you.</code> Fastest way to contact me is Discord. Send game type plus your vision. The more detail the faster I say yes.</p>
+<div class="contact-grid">
+<div class="card">
+<h3>Payment policy</h3>
+<p>Half upfront, half after completion. Higher upfront payment gets higher priority in my queue. Clips before final pay, full source plus setup guide after. 3 day bug fix warranty.</p>
 <div class="btn-row">
 <a class="btn" href="https://discord.com/users/monsterchugger67" target="_blank">Message on Discord</a>
 <a class="btn2" href="#" onclick="copyDiscord();return false;">Copy Username</a>
+</div>
+</div>
+<div class="card">
+<h3>Handles</h3>
+<div class="handle"><span><b>Discord</b> <small>fastest, monsterchugger67</small></span><button class="copy" onclick="copyDiscord();return false;">Copy</button></div>
+<a class="handle" href="https://ko-fi.com/monsterchugger67" target="_blank"><span><b>Ko-Fi</b> <small>purchase and checkout</small></span><span>Open &gt;</span></a>
+<a class="handle" href="proofs.html"><span><b>Proofs</b> <small>$23,000+ earned, receipts</small></span><span>Open &gt;</span></a>
+</div>
 </div>
 <p style="color:var(--mut);font-size:14px">Thanks for stopping by.</p>
 </section>

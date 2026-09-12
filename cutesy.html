@@ -11,20 +11,31 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 a{color:inherit;text-underline-offset:3px}
 .wrap{max-width:1075px;margin:0 auto;padding:0 24px 100px}
-header{display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);margin-bottom:40px;gap:12px;flex-wrap:wrap}
-header .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:22px;color:var(--fg);text-decoration:none}
-header .brand span{color:var(--mut);font-weight:400}
-.avatar{width:48px;height:48px;object-fit:cover;display:block;border:0}
-nav{display:flex;gap:20px;font-size:20px;color:var(--mut);flex-wrap:wrap}
-nav a{text-decoration:none} nav a:hover{color:var(--fg);text-decoration:underline}
-nav a.active{color:var(--fg);text-decoration:underline}
+.site-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header .inner{max-width:1075px;margin:0 auto;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.brand .id{line-height:1.25}
+.brand .id b{display:block;font-size:16px}
+.brand .id span{font-size:12px;color:var(--mut);font-weight:400}
+.avatar{width:40px;height:40px;object-fit:cover;display:block;border:1px solid var(--line)}
+nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;color:var(--mut);font-size:15px;padding:8px 12px;border:1px solid transparent}
+nav a:hover{color:var(--fg);background:var(--soft);border-color:var(--line)}
+nav a.active{color:var(--fg);background:var(--soft);border-color:var(--line)}
+.page-head{margin-top:32px}
+.page-head h1{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;font-weight:800;margin:0 0 8px}
 h1{font-size:32px;letter-spacing:-.8px;margin:0 0 8px}
 .sub{color:var(--mut);max-width:640px}
-section{margin-top:48px}
-.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
-.model{border:1px solid var(--line);background:var(--bg);display:block}
+section{margin-top:56px}
+h2{font-size:24px;font-weight:750;letter-spacing:-.5px;margin-bottom:6px}
+h3{font-size:16px;margin-bottom:4px}
+p{margin:10px 0}
+.model-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+.model{border:1px solid var(--line);background:var(--soft);display:block}
+.model:hover{border-color:var(--fg)}
 .model a.img-link{display:block;border-bottom:1px solid var(--line);background:#000;position:relative;overflow:hidden}
 .model img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block;background:#000}
 .model a.img-link img.wm{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;aspect-ratio:auto;background:transparent}
@@ -39,21 +50,28 @@ section{margin-top:48px}
 .lightbox p{color:#fff;font-size:14px}
 .lightbox p b{color:#fff}
 .lightbox .close{color:#fff;font-size:16px;text-decoration:none;border:1px solid #555;padding:8px 18px;display:inline-block;margin-top:8px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:0;font-size:14.5px;font-weight:650;text-decoration:none;border:1px solid var(--fg)}
 footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 #top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
 #top.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media(max-width:1000px){.model-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.model-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-<a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture">monsterchugger67 <span>/ cutesy collection</span></a>
+<header class="site-header">
+<div class="inner">
+<a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture"><span class="id"><b>monsterchugger67</b><span>cutesy collection</span></span></a>
 <nav><a href="index.html">Home</a><a href="index.html#work">Work</a><a href="modeling.html" class="active">Modeling</a><a href="index.html#pricing">Pricing</a><a href="proofs.html">Proofs</a><a href="experience.html">Experience &amp; Past Work</a><a href="index.html#contact">Contact</a><a href="https://ko-fi.com/monsterchugger67" target="_blank">Purchase</a></nav>
+</div>
 </header>
+<div class="wrap">
 
+<div class="page-head">
 <h1>Cutesy Collection</h1>
 <p class="sub">8 game-ready cute models. Most of them are under 2.5k tris. Clean topology, optimized for Roblox. Click any model to see the full version.</p>
+</div>
 
 <section>
 <div class="model-grid">

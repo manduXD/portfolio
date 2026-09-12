@@ -11,37 +11,54 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 a{color:inherit;text-underline-offset:3px}
 .wrap{max-width:1075px;margin:0 auto;padding:0 24px 100px}
-header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);margin-bottom:36px;gap:12px;flex-wrap:wrap}
-header .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:22px;color:var(--fg);text-decoration:none}
-header .brand span{color:var(--mut);font-weight:400}
-.avatar{width:48px;height:48px;object-fit:cover;display:block;border:0}
-nav{display:flex;gap:20px;font-size:20px;color:var(--mut);flex-wrap:wrap}
-nav a{text-decoration:none} nav a:hover{color:var(--fg);text-decoration:underline}
-nav a.active{color:var(--fg);text-decoration:underline}
+.site-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header .inner{max-width:1075px;margin:0 auto;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.brand .id{line-height:1.25}
+.brand .id b{display:block;font-size:16px}
+.brand .id span{font-size:12px;color:var(--mut);font-weight:400}
+.avatar{width:40px;height:40px;object-fit:cover;display:block;border:1px solid var(--line)}
+nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;color:var(--mut);font-size:15px;padding:8px 12px;border:1px solid transparent}
+nav a:hover{color:var(--fg);background:var(--soft);border-color:var(--line)}
+nav a.active{color:var(--fg);background:var(--soft);border-color:var(--line)}
+.page-head{margin-top:32px}
+.page-head h1{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;font-weight:800;margin:0 0 8px}
 h1{font-size:32px;letter-spacing:-.8px;margin:0 0 8px}
 .sub{color:var(--mut);max-width:640px}
-figure{border:1px solid var(--line);border-radius:0;margin:24px 0;background:var(--bg)}
+section{margin-top:56px}
+h2{font-size:24px;font-weight:750;letter-spacing:-.5px;margin-bottom:6px}
+h3{font-size:16px;margin-bottom:4px}
+p{margin:10px 0}
+figure{border:1px solid var(--line);margin:24px 0;background:var(--soft)}
 figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--line);background:var(--soft)}
 figure figcaption{padding:18px 20px;font-size:14.5px}
 figure figcaption b{display:block;font-size:15px;margin-bottom:4px}
 figure figcaption span{color:var(--mut)}
 .note{background:var(--soft);border:1px solid var(--line);border-radius:0;padding:16px 18px;font-size:14.5px;color:var(--mut);margin:18px 0}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:0;font-size:14.5px;font-weight:650;text-decoration:none;border:1px solid var(--fg)}
 footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 #top{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--bg);border:1px solid var(--fg);width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:.25s;z-index:50;border-radius:0}
 #top.show{transform:translateX(-50%) translateY(0);opacity:1}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-<a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture">monsterchugger67 <span>/ proofs</span></a>
+<header class="site-header">
+<div class="inner">
+<a class="brand" href="index.html"><img class="avatar" src="roachyes.jpg" alt="monsterchugger67 profile picture"><span class="id"><b>monsterchugger67</b><span>proofs</span></span></a>
 <nav><a href="index.html">Home</a><a href="index.html#work">Work</a><a href="modeling.html">Modeling</a><a href="index.html#pricing">Pricing</a><a href="proofs.html" class="active">Proofs</a><a href="experience.html">Experience &amp; Past Work</a><a href="index.html#contact">Contact</a><a href="https://ko-fi.com/monsterchugger67" target="_blank">Purchase</a></nav>
+</div>
 </header>
+<div class="wrap">
 
+<div class="page-head">
 <h1>Proofs</h1>
 <p class="sub">Tebex covers both Roblox commissions and Minecraft mod, plugin and Skript commissions. PayPal is direct Roblox scripting pay. Names, IDs and card numbers are blacked out. Obviously.</p>
+</div>
 
 <div class="note">The numbers: <strong style="color:var(--fg)">23,465.54 dollars all time on Tebex</strong>, 8,498.33 dollars year to date, 947.65 dollars month to date, 150 plus paid orders, plus <strong style="color:var(--fg)">1,233.56 dollars on PayPal</strong> from Roblox work.</div>
 
