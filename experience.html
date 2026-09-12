@@ -38,9 +38,15 @@ p{margin:10px 0}
 .card p{color:var(--mut);font-size:15px;margin:4px 0 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .clip-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
-.clip{border:1px solid var(--line);background:var(--soft);text-decoration:none;color:inherit;display:block}
+.clip{border:1px solid var(--line);background:var(--soft);text-decoration:none;color:inherit;display:block;position:relative}
 .clip:hover{border-color:var(--fg)}
-.clip video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;background:#000;border-bottom:1px solid var(--line)}
+.clip .thumb{position:relative;display:block;aspect-ratio:16/9;background:var(--soft);border-bottom:1px solid var(--line);overflow:hidden}
+.clip video{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:transparent;border-bottom:0;position:relative;z-index:1}
+.clip.loading video{opacity:0}
+.clip.loading .thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--soft) 40%,var(--line) 50%,var(--soft) 60%);background-size:200% 100%;animation:shimmer 1.2s infinite;z-index:0}
+.clip.loading .thumb::after{content:"";position:absolute;top:50%;left:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border:2px solid var(--line);border-top-color:var(--mut);border-radius:50%;animation:spin .8s linear infinite;z-index:0}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
 .clip img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;background:#000;border-bottom:1px solid var(--line)}
 .clip .soon{aspect-ratio:16/9;display:grid;place-items:center;background:var(--soft);color:var(--mut);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
 .clip span{display:block;padding:10px 12px;font-size:13.5px;color:var(--mut)}
@@ -94,12 +100,12 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 <p>This is what I sell and what I am best at. Combat that feels good, movement players love, anticheats that hold up, data that does not randomly wipe, mobs and quests, shops and inventories.</p>
 <p>Everything ships with a config you can read and comments that make sense. You tweak numbers, I handle the scary backend parts.</p>
 <div class="clip-grid">
-<a class="clip" href="videos/parry.html"><video src="videos/parry.mp4" preload="metadata" muted playsinline></video><span><b>Parry combat system</b> Dashing, parrying, criticals, weapons and posture.</span></a>
-<a class="clip" href="videos/parkour.html"><video src="videos/0904.mp4" preload="metadata" muted playsinline></video><span><b>R6 Movement / Parkour System</b> R6 wall running, sliding, vaulting and more.</span></a>
-<a class="clip" href="videos/anticheat.html"><video src="videos/anticheat.mp4" preload="metadata" muted playsinline></video><span><b>Advanced Anticheat</b> Aim, movement, NoClip, client tampering and more.</span></a>
-<a class="clip" href="videos/leaf.html"><video src="videos/leaf.mp4" preload="metadata" muted playsinline></video><span><b>Leaf picking simulator system</b> Upgrades, picking, tasks, inventory and more.</span></a>
-<a class="clip" href="videos/moderation.html"><video src="videos/moderation.mp4" preload="metadata" muted playsinline></video><span><b>Discord to Roblox moderation and action system</b> Bans, logs, roles and data actions from Discord.</span></a>
-<a class="clip" href="videos/various.html"><video src="videos/various.mp4" preload="metadata" muted playsinline></video><span><b>Various important game systems</b> Spins, profiles, clans and more.</span></a>
+<a class="clip" href="videos/parry.html"><span class="thumb"><video src="videos/parry.mp4" preload="metadata" muted playsinline></video></span><span><b>Parry combat system</b> Dashing, parrying, criticals, weapons and posture.</span></a>
+<a class="clip" href="videos/parkour.html"><span class="thumb"><video src="videos/0904.mp4" preload="metadata" muted playsinline></video></span><span><b>R6 Movement / Parkour System</b> R6 wall running, sliding, vaulting and more.</span></a>
+<a class="clip" href="videos/anticheat.html"><span class="thumb"><video src="videos/anticheat.mp4" preload="metadata" muted playsinline></video></span><span><b>Advanced Anticheat</b> Aim, movement, NoClip, client tampering and more.</span></a>
+<a class="clip" href="videos/leaf.html"><span class="thumb"><video src="videos/leaf.mp4" preload="metadata" muted playsinline></video></span><span><b>Leaf picking simulator system</b> Upgrades, picking, tasks, inventory and more.</span></a>
+<a class="clip" href="videos/moderation.html"><span class="thumb"><video src="videos/moderation.mp4" preload="metadata" muted playsinline></video></span><span><b>Discord to Roblox moderation and action system</b> Bans, logs, roles and data actions from Discord.</span></a>
+<a class="clip" href="videos/various.html"><span class="thumb"><video src="videos/various.mp4" preload="metadata" muted playsinline></video></span><span><b>Various important game systems</b> Spins, profiles, clans and more.</span></a>
 </div>
 <p><a class="btn" href="clips.html">VIEW MORE</a></p>
 </section>
@@ -148,6 +154,7 @@ function goTop(){window.scrollTo({top:0,behavior:'smooth'});}
 window.addEventListener('scroll',function(){var b=document.getElementById('top');if(b)b.classList.toggle('show',window.scrollY>400);},{passive:true});
 document.querySelectorAll('.model img').forEach(function(img){img.setAttribute('draggable','false');img.addEventListener('dragstart',function(e){e.preventDefault();});img.addEventListener('contextmenu',function(e){e.preventDefault();});});
 document.addEventListener('contextmenu',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});
+document.querySelectorAll('.clip').forEach(function(card){var v=card.querySelector('video');if(!v)return;card.classList.add('loading');function done(){card.classList.remove('loading');}v.addEventListener('loadeddata',done);v.addEventListener('error',done);if(v.readyState>=2)done();});
 </script>
 </body>
 </html>
