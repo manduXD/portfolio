@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const DATA_DIR = path.join(/tmp, 'data');
+const DATA_DIR = path.join(process.cwd(), 'data');
 
 function getClientIP(req) {
     return req.headers['x-forwarded-for']?.split(',')[0] ||
@@ -24,6 +24,7 @@ module.exports = async function handler(req, res) {
     if (token && fs.existsSync(sessionFile)) {
         const storedToken = fs.readFileSync(sessionFile, 'utf8').trim();
         if (storedToken === token) {
+            res.setHeader('Access-Control-Allow-Origin', '*');
             return res.status(200).json({ authenticated: true });
         }
     }

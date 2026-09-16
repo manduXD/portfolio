@@ -20,5 +20,12 @@
       "src": "/api/data/(.*)",
       "dest": "/api/dataFile.js"
     }
-  ]
+  ],
+  "functions": {
+    "api/upload.js": {
+      "runtime": "nodejs18.x",
+      "memory": 256,
+      "maxDuration": 30
+    }
+  }
 }

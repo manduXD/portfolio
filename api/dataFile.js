@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const DATA_DIR = path.join(/tmp, 'data');
+const DATA_DIR = path.join(process.cwd(), 'data');
 
 function getClientIP(req) {
     return req.headers['x-forwarded-for']?.split(',')[0] ||
@@ -43,6 +43,7 @@ module.exports = async function handler(req, res) {
         const jsonMatch = zipText.match(/\{[\s\S]*\}/);
         if (jsonMatch) {
             const data = JSON.parse(jsonMatch[0]);
+            res.setHeader('Access-Control-Allow-Origin', '*');
             res.status(200).json({ data });
         }
     } catch (e) {
