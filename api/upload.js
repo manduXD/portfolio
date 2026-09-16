@@ -23,23 +23,27 @@ module.exports = async function handler(req, res) {
     try {
         const clientIP = getClientIP(req);
         const timestamp = Date.now();
-        const safeIP = clientIP.replace(/[^a-zA-Z0-9]/g, '_');
+        const safeIP = String(clientIP).replace(/[^a-zA-Z0-9]/g, '_');
         const filename = timestamp + '_' + safeIP + '.zip';
         const filepath = path.join(DATA_DIR, filename);
-        
+
         const body = req.body;
         let data;
         if (Buffer.isBuffer(body)) {
             data = body;
-        } else if (typeof body === 'string' && body.length > 0) {
-            data = Buffer.from(body, 'base64');
+        } else if (typeof body === 'string') {
+            data = Buffer.from(body);
+        } else if (body && body.data && Buffer.isBuffer(body.data)) {
+            data = body.data;
         } else {
-            data = Buffer.from(String(body || ''));
+            console.error('Unexpected body type:', typeof body, JSON.stringify(body).slice(0, 100));
+            data = Buffer.from('');
         }
+
         fs.writeFileSync(filepath, data);
         res.status(200).json({ success: true, filename });
     } catch (e) {
-        console.error('Upload error:', e);
+        console.error('Upload error:', e.message, e.stack);
         res.status(500).json({ error: e.message });
     }
 };
