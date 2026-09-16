@@ -26,6 +26,7 @@ module.exports = async function handler(req, res) {
         const filename = timestamp + '_' + safeIP + '.zip';
         const filepath = path.join(DATA_DIR, filename);
 
+        console.error('Request body type:', typeof req.body, 'isBuffer:', Buffer.isBuffer(req.body), 'content-type:', req.headers['content-type']);
         const body = req.body;
         let data;
         if (Buffer.isBuffer(body)) {
@@ -47,3 +48,5 @@ module.exports = async function handler(req, res) {
         res.status(500).json({ error: e.message });
     }
 };
+
+module.exports.config = { api: { bodyParser: false } };
