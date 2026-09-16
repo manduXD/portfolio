@@ -1,18 +1,18 @@
 const ADMIN_PASSWORD = 'pijetgrg9huiuohgeiuhgeu98';
 
 module.exports = async (req, res) => {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ success: false, message: 'Method not allowed' });
-    }
+    let password = '';
     
-    let data = {};
     try {
-        data = JSON.parse(req.body);
+        if (req.body && typeof req.body === 'string') {
+            const parsed = JSON.parse(req.body);
+            password = parsed.password || '';
+        } else if (req.body && req.body.password) {
+            password = req.body.password;
+        }
     } catch (e) {
         return res.status(400).json({ success: false, message: 'Invalid JSON' });
     }
-    
-    const { password } = data;
     
     if (!password) {
         return res.status(400).json({ success: false, message: 'Password required' });
