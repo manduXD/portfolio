@@ -20,10 +20,9 @@ module.exports = async (req, res) => {
         return res.status(403).json({ success: false, message: 'IP blocked. Too many attempts.' });
     }
     
-    const body = await Buffer.from(req).toString('utf8');
     let data = {};
     try {
-        data = JSON.parse(body);
+        data = JSON.parse(req.body);
     } catch (e) {}
     
     const { password } = data;
