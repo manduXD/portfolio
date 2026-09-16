@@ -6,7 +6,7 @@ if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-export const config = {
+module.exports.config = {
     api: {
         bodyParser: false
     }
