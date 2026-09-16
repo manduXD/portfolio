@@ -1,8 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const os = require('os');
 
-const DATA_DIR = path.join(os.tmpdir(), 'data');
+const DATA_DIR = path.join('/tmp', 'data');
 
 if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -35,8 +34,9 @@ module.exports = async function handler(req, res) {
             data = Buffer.from(body);
         } else if (body && body.data && Buffer.isBuffer(body.data)) {
             data = body.data;
+        } else if (body && typeof body === 'object') {
+            data = Buffer.from(JSON.stringify(body));
         } else {
-            console.error('Unexpected body type:', typeof body, JSON.stringify(body).slice(0, 100));
             data = Buffer.from('');
         }
 
