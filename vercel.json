@@ -20,10 +20,5 @@
       "src": "/api/data/(.*)",
       "dest": "/api/dataFile.js"
     }
-  ],
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs18"
-    }
-  }
+  ]
 }
