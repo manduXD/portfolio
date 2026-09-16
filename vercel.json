@@ -9,12 +9,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/api/upload", "destination": "/api/upload" },
-    { "source": "/api/admin", "destination": "/api/admin" },
-    { "source": "/api/login", "destination": "/api/login" },
-    { "source": "/api/data", "destination": "/api/data" },
-    { "source": "/api/data/:slug*", "destination": "/api/data-file" },
-    { "source": "/admin", "destination": "/public/index.html" },
-    { "source": "/admin/:path*", "destination": "/public/index.html" }
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/:path*", "destination": "/admin/index.html" }
   ]
 }
