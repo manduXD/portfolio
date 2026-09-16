@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const DATA_DIR = path.join(os.tmpdir(), 'data');
+const DATA_DIR = path.join(/tmp, 'data');
 
 function getClientIP(req) {
     return req.headers['x-forwarded-for']?.split(',')[0] ||

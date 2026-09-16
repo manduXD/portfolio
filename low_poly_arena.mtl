@@ -1,0 +1,72 @@
+newmtl Ground
+Kd 0.290 0.630 0.270
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl RockDark
+Kd 0.200 0.230 0.310
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl RockTop
+Kd 0.660 0.610 0.550
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl RockSide
+Kd 0.360 0.310 0.270
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl Cover
+Kd 0.200 0.240 0.360
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl Crate
+Kd 0.230 0.550 0.270
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl Trunk
+Kd 0.180 0.270 0.240
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl Leaf
+Kd 0.140 0.350 0.310
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+
+newmtl Debris
+Kd 0.080 0.080 0.110
+Ka 0.1 0.1 0.1
+Ks 0.0 0.0 0.0
+Ns 12
+d 1.0
+illum 1
+

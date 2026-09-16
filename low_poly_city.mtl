@@ -1,0 +1,251 @@
+newmtl Concrete
+Kd 0.550 0.560 0.600
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_pavers.png
+
+newmtl Stone
+Kd 0.660 0.610 0.550
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_pavers.png
+
+newmtl Cream
+Kd 0.950 0.910 0.790
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_plaster.png
+
+newmtl Asphalt
+Kd 0.160 0.170 0.200
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_asphalt.png
+
+newmtl Slate
+Kd 0.230 0.270 0.390
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+
+newmtl RoofGrey
+Kd 0.420 0.430 0.470
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_roofgrey.png
+
+newmtl FacadeA
+Kd 0.620 0.600 0.580
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_facadeA.png
+
+newmtl FacadeB
+Kd 0.520 0.440 0.380
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_facadeB.png
+
+newmtl FacadeGlass
+Kd 0.350 0.520 0.680
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 80
+d 1.0
+illum 2
+map_Kd city_textures/city_facadeGlass.png
+
+newmtl Glass
+Kd 0.550 0.780 0.900
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 120
+d 1.0
+illum 2
+map_Kd city_textures/city_facadeGlass.png
+
+newmtl Plaster
+Kd 0.930 0.880 0.760
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_plaster.png
+
+newmtl Roof
+Kd 0.620 0.260 0.180
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_roof.png
+
+newmtl Trunk
+Kd 0.260 0.190 0.120
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+
+newmtl Wood
+Kd 0.550 0.400 0.240
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_wood.png
+
+newmtl Leaf
+Kd 0.160 0.420 0.300
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_leaf.png
+
+newmtl Grass
+Kd 0.300 0.620 0.280
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_grass.png
+
+newmtl Sand
+Kd 0.870 0.780 0.580
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd city_textures/city_plaster.png
+
+newmtl Water
+Kd 0.150 0.450 0.800
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 150
+d 0.7
+illum 2
+map_Kd city_textures/city_water.png
+
+newmtl Gold
+Kd 0.950 0.750 0.250
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 60
+d 1.0
+illum 2
+Ke 0.950 0.750 0.250
+
+newmtl Beacon
+Kd 1.000 0.250 0.250
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+Ke 1.000 0.250 0.250
+
+newmtl LampGlow
+Kd 1.000 0.800 0.450
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+Ke 1.000 0.800 0.450
+
+newmtl WheelRed
+Kd 0.800 0.150 0.150
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+
+newmtl WheelGreen
+Kd 0.120 0.600 0.300
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+
+newmtl Cabin
+Kd 0.950 0.900 0.700
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+
+newmtl Ad1
+Kd 0.850 0.150 0.200
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+map_Kd city_textures/city_ad1.png
+Ke 0.850 0.150 0.200
+
+newmtl Ad2
+Kd 0.050 0.650 0.850
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+map_Kd city_textures/city_ad2.png
+Ke 0.050 0.650 0.850
+
+newmtl Ad3
+Kd 0.550 0.250 0.750
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+map_Kd city_textures/city_ad3.png
+Ke 0.550 0.250 0.750
+
+newmtl Ad4
+Kd 0.100 0.650 0.350
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+map_Kd city_textures/city_ad4.png
+Ke 0.100 0.650 0.350
+

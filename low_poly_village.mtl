@@ -1,0 +1,205 @@
+newmtl Grass
+Kd 0.300 0.620 0.280
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_grass.png
+
+newmtl LeafDark
+Kd 0.130 0.380 0.260
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_leaf.png
+
+newmtl Leaf
+Kd 0.170 0.450 0.320
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_leaf.png
+
+newmtl Stone
+Kd 0.640 0.600 0.540
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_pavers.png
+
+newmtl StoneTrim
+Kd 0.550 0.510 0.460
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_pavers.png
+
+newmtl RockSide
+Kd 0.450 0.400 0.350
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_rock.png
+
+newmtl RockDark
+Kd 0.250 0.280 0.370
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_rock_dark.png
+
+newmtl RockTop
+Kd 0.600 0.550 0.480
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_pavers.png
+
+newmtl Slate
+Kd 0.230 0.270 0.390
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_rock_dark.png
+
+newmtl Plaster
+Kd 0.930 0.880 0.760
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_plaster.png
+
+newmtl Cream
+Kd 0.960 0.920 0.800
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_plaster.png
+
+newmtl Roof
+Kd 0.620 0.260 0.180
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_roof.png
+
+newmtl BarnRed
+Kd 0.600 0.200 0.150
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_roof.png
+
+newmtl Trunk
+Kd 0.260 0.190 0.120
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_wood.png
+
+newmtl Wood
+Kd 0.480 0.340 0.220
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_wood.png
+
+newmtl Crate
+Kd 0.560 0.390 0.230
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_wood.png
+
+newmtl Hay
+Kd 0.850 0.720 0.350
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_wood.png
+
+newmtl Soil
+Kd 0.320 0.220 0.140
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+map_Kd village_textures/village_soil.png
+
+newmtl Glass
+Kd 0.550 0.780 0.900
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 120
+d 1.0
+illum 2
+
+newmtl Water
+Kd 0.280 0.560 0.850
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 150
+d 1.0
+illum 2
+Ke 0.280 0.560 0.850
+
+newmtl Gold
+Kd 0.950 0.750 0.250
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 60
+d 1.0
+illum 2
+Ke 0.950 0.750 0.250
+
+newmtl LampGlow
+Kd 1.000 0.720 0.350
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 20
+d 1.0
+illum 2
+Ke 1.000 0.720 0.350
+
+newmtl Apple
+Kd 0.850 0.200 0.200
+Ka 0.08 0.08 0.08
+Ks 0.05 0.05 0.05
+Ns 12
+d 1.0
+illum 2
+
